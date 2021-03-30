@@ -3,21 +3,44 @@
      03/30/2021
         
      Making an countdown towards certain holiday-->
-        
+
+<!--HEADING-->       
 <!DOCTYPE html>
-
-
 <html>
         <head>
-
-
+<link rel="stylesheet" href="site.css">
         </head>
 
+ <body>
+<!--TEXT-->
+<h1 id="demo"></h1>
+<h2> Days until Christmas</h2>
+<p>______________________________________________________________________________________________________________________________________________________________________________________________________________________________________</p>
+</div>
 
-        <body>
 
+<script>
+// Christmas Date
+var countDownDate = new Date("Dec 26, 2021 00:00:00").getTime();
 
-        </body>
+var x = setInterval(function() {
 
+  //Today's date 
+  var now = new Date().getTime();
+  // How many days away
+  var distance = countDownDate - now;
+    
+  // Time calculation
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  
+  document.getElementById("demo").innerHTML = days + "d ";
+     
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Merry Christmas";
+  }
+}, 1000);
+</script>
 
+</body>
 </html>
